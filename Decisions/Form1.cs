@@ -23,7 +23,15 @@ namespace Decisions
                stating "You can drive now" if age is 16. If not 16 then display,
                "You are not 16".
             */
-
+            int age = 15;
+            if(age == 16)
+            {
+                driveOutput.Text = "You are old enough to drive.";
+            }
+            else
+            {
+                driveOutput.Text = "You are not 16.";
+            }
         }
 
         private void ageButton_Click(object sender, EventArgs e)
@@ -32,7 +40,16 @@ namespace Decisions
                to determine if the person is old enough to vote. Display an
                appropriate message based on whether they can or can't vote            
              */
+            int age = Convert.ToInt32(ageInput.Text);
 
+            if (age >= 18)
+            {
+                voteOutput.Text = "You are old enough to vote.";
+            }
+            else
+            {
+                voteOutput.Text = "You are not old enough to vote.";
+            }
         }
 
         private void workButton_Click(object sender, EventArgs e)
@@ -48,7 +65,17 @@ namespace Decisions
                You worked 40 hours plus 5 hours overtime
 
              */
+            int hours = Convert.ToInt32(hoursInput.Text);
+            int overtime = hours - 40;
 
+            if (hours >= 41)
+            {
+                workOutput.Text = $"You worked 40 hours plus {overtime} hours overtime";
+            }
+            else
+            {
+                workOutput.Text = $"You worked {hours} hours";
+            }
         }
 
         private void maxButton_Click(object sender, EventArgs e)
@@ -62,7 +89,17 @@ namespace Decisions
                Sample output for inputs 22, 77
                The max value is: 77
             */
+            int num1 = Convert.ToInt32(num1Input.Text);
+            int num2 = Convert.ToInt32(num2Input.Text);
 
+            if (num1 >= num2)
+            {
+                maxOutput.Text = $"The max value is {num1}";
+            }
+            else
+            {
+                maxOutput.Text = $"The max value is {num2}";
+            }
         }
 
         private void yearButton_Click(object sender, EventArgs e)
@@ -76,7 +113,16 @@ namespace Decisions
                Sample output for inputs 2016
                2016 is a leap year
             */
+            int year = Convert.ToInt32(yearInput.Text);
 
+            if (year%4 == 0)
+            {
+                yearOutput.Text = $"{year} is a leap year";
+            }
+            else
+            {
+                yearOutput.Text = $"{year} is not a leap year";
+            }
         }
     }
 }
